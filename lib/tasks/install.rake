@@ -1,8 +1,8 @@
-namespace :flag_promotions do
+namespace :spree_flag_promotions do
   desc "Copies all migrations and assets (NOTE: This will be obsolete with Rails 3.1)"
   task :install do
-    Rake::Task['flag_promotions:install:migrations'].invoke
-    Rake::Task['flag_promotions:install:assets'].invoke
+    Rake::Task['spree_flag_promotions:install:migrations'].invoke
+    Rake::Task['spree_flag_promotions:install:assets'].invoke
   end
 
   namespace :install do

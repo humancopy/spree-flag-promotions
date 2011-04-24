@@ -6,7 +6,7 @@ require 'rake/testtask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
 
-spec = eval(File.read('flag_promotions.gemspec'))
+spec = eval(File.read('spree_flag_promotions.gemspec'))
 
 Rake::GemPackageTask.new(spec) do |p|
   p.gem_spec = spec

@@ -1,7 +1,7 @@
 require 'spree_core'
-require 'flag_promotions_hooks'
+require 'spree_flag_promotions_hooks'
 
-module FlagPromotions
+module SpreeFlagPromotions
   class Engine < Rails::Engine
 
     config.autoload_paths += %W(#{config.root}/lib)

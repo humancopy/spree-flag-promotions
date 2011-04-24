@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'flag_promotions'
+  s.name        = 'spree_flag_promotions'
   s.version     = '1.0.0'
   s.summary     = 'Add gem summary here'
   #s.description = 'Add (optional) gem description here'
