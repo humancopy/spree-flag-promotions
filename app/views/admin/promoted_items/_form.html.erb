@@ -1,0 +1,31 @@
+<%- locals = {:f => f} %>
+<%= hook :admin_promoted_item_form, locals do %>
+  <p>
+    <%= f.label :description, t("description")%><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :product_id, t("product")%><br />
+    <%= f.collection_select :product_id, Product.order(:name).all, :id, :name, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :start_date, t("start_date")%><br />
+    <%= f.spree_date_picker :start_date, :style=>"width:150px" %>
+  </p>
+  <p>
+    <%= f.label :end_date, t("end_date")%><br />
+    <%= f.spree_date_picker :end_date, :style=>"width:150px" %>
+  </p>
+
+  <%= f.field_container :background do %>
+    <%= f.label :background, t('background') %><br />
+    <%= f.file_field :background %>
+  <% end %>
+
+  <%= f.field_container :image do %>
+    <%= f.label :image, t('image') %><br />
+    <%= f.file_field :image %>
+  <% end %>
+
+<% end %>
+<%= javascript_tag "datePickerController.create();" %>

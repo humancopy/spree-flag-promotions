@@ -1,0 +1,45 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_promoted_item_link">
+      <%= button_link_to t("new_promoted_item"), new_object_url, {:remote => true, :icon => 'add', :id => 'admin_new_promoted_item'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<div id="new_promoted_item"></div>
+
+<% if collection.nil? || collection.empty? %>
+<h1>No Promoted Items Found</h1>
+<% else %>
+<h1><%= "#{t("actions.listing")} #{t("promoted_items")}" %></h1>
+<table class="index sortable" id="listing_promoted_items">
+  <tr>
+    <%= hook :admin_promoted_items_index_headers do %>
+      <th><%= t("name") %></th>
+      <th><%= t("start_date") %></th>
+      <th><%= t("end_date") %></th>
+    <% end %>
+    <th>
+      <%= hook :admin_promoted_items_index_header_actions %>
+    </th>
+  </tr>
+<% collection.each do |promoted_item| %>
+  <tr id="<%= dom_id promoted_item %>">
+    <%- locals = {:promoted_item => promoted_item} %>
+    <%= hook :admin_promoted_items_index_rows, locals do %>
+      <td><span class="handle"></span> <%= promoted_item.name %></td>
+      <td><%= promoted_item.start_date %></td>
+      <td><%= promoted_item.end_date %></td>
+    <% end %>
+    <td class="actions">
+      <%= hook :admin_promoted_items_index_row_actions, locals do %>
+        <%= link_to_edit promoted_item, :class => 'edit'  %>
+        &nbsp;
+        <%= link_to_delete promoted_item  %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<% end %>
