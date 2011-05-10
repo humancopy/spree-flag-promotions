@@ -3,18 +3,24 @@ class PromotedItem < ActiveRecord::Base
   belongs_to :product
 
   validates :product, :presence => true
+
   has_attached_file :background,
                 :styles => { :normal => '990x530>' },
                 :default_style => :normal,
-                :url => "/assets/promoted_items/:id/bg/:style/:basename.:extension",
-                :path => ":rails_root/public/assets/promoted_items/:id/bg/:style/:basename.:extension",
+                :path => SpreeFlagPromotions.s3? ? 'assets/products/:id/bg/:style/:basename.:extension' : ':rails_root/public/assets/products/:id/bg/:style/:basename.:extension',
+                :url => '/assets/products/:id/bg/:style/:basename.:extension',
+                :storage => SpreeFlagPromotions.s3? ? 's3' : 'filesystem',
+                :s3_credentials => Rails.root.join('config', 's3.yml'),
                 :default_url => "/images/blank.png"
   has_attached_file :image,
                 :styles => { :normal => '990x530>' },
                 :default_style => :normal,
-                :url => "/assets/promoted_items/:id/image/:style/:basename.:extension",
-                :path => ":rails_root/public/assets/promoted_items/:id/image/:style/:basename.:extension",
+                :path => SpreeFlagPromotions.s3? ? 'assets/products/:id/image/:style/:basename.:extension' : ':rails_root/public/assets/products/:id/image/:style/:basename.:extension',
+                :url => '/assets/products/:id/image/:style/:basename.:extension',
+                :storage => SpreeFlagPromotions.s3? ? 's3' : 'filesystem',
+                :s3_credentials => Rails.root.join('config', 's3.yml'),
                 :default_url => "/images/blank.png"
+
 
   scope :valid, where('start_date <= :start_date AND end_date >= :end_date', {:start_date => Time.now, :end_date => Time.now})
 
