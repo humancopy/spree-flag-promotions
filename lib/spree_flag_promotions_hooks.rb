@@ -1,6 +1,7 @@
 class SpreeFlagPromotionsHooks < Spree::ThemeSupport::HookListener
-  # custom hooks go here
-  insert_after :admin_tabs do
-    %(<%= tab(:promoted_items) %>)
-  end
+  Deface::Override.new(
+      :virtual_path => "layouts/admin",
+      :insert_bottom => "[data-hook='admin_tabs']",
+      :text => %(<%= tab(:promoted_items) %>)
+    )
 end
