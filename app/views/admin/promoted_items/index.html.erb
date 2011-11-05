@@ -12,29 +12,21 @@
 <table class="index sortable" id="listing_promoted_items">
   <thead>
     <tr>
-    <%= hook :admin_promoted_items_index_headers do %>
       <th><%= t("name") %></th>
       <th><%= t("start_date") %></th>
       <th><%= t("end_date") %></th>
-    <% end %>
-      <th>
-        <%= hook :admin_promoted_items_index_header_actions %>
-      </th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
   <% @promoted_items.each do |promoted_item|%>
     <tr id="<%= dom_id promoted_item %>">
-    <%= hook :admin_promoted_items_index_rows, promoted_item do %>
       <td><span class="handle"></span> <%= promoted_item.name %></td>
       <td><%= promoted_item.start_date %></td>
       <td><%= promoted_item.end_date %></td>
-    <% end %>
       <td class="actions">
-      <%= hook :admin_promoted_items_index_row_actions, promoted_item do %>
         <%= link_to_edit promoted_item, :class => 'edit'  %> &nbsp;
         <%= link_to_delete promoted_item  %>
-      <% end %>
       </td>
     </tr>
   <% end %>

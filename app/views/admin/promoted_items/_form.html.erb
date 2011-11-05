@@ -1,5 +1,3 @@
-<%= hook :admin_promoted_item_form, f do %>
-
 <%= f.field_container :description do %>
   <%= f.label :description, t("description")%><br />
   <%= f.text_field :description %>
@@ -27,6 +25,4 @@
 <%= f.field_container :background do %>
   <%= f.label :image, t("image") %><br />
   <%= f.file_field :image %>
-<% end %>
-
 <% end %>
