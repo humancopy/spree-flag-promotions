@@ -1,0 +1,14 @@
+# development:
+#   bucket: yourapp_dev
+#   access_key_id: AAAAAAAAAAAAAAAAAAA
+#   secret_access_key: AJHKHJKKJHKHkjsdf+EuXQu5xvingQXY0M+gyYnFGqUJ
+
+# test:
+#   bucket: yourapp_test
+#   access_key_id: AAAAAAAAAAAAAAAAAAA
+#   secret_access_key: AJHKHJKKJHKHkjsdf+EuXQu5xvingQXY0M+gyYnFGqUJ
+
+production:
+  bucket: yourapp_prod
+  access_key_id: AAAAAAAAAAAAAAAAAAA
+  secret_access_key: AJHKHJKKJHKHkjsdf+EuXQu5xvingQXY0M+gyYnFGqUJ

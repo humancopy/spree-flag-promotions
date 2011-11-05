@@ -1,9 +1,8 @@
-<%= render "shared/error_messages", :target => @promoted_item %>
+<h1><%=t("new_promoted_item")%></h1>
 
-<%= form_for(:promoted_item,  :url => collection_url, :html => { :multipart => true }) do |f| %>
-<fieldset>
-  <%= render :partial => 'form', :locals => {:f => f} %>
-  <%= render :partial => 'admin/shared/new_resource_links' %>
-</fieldset>
+<%= render 'shared/error_messages', :target => @promoted_item %>
+
+<%= form_for(:promoted_item, :url => collection_url, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <%= render :partial => "admin/shared/new_resource_links" %>
 <% end %>
-

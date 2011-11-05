@@ -1,6 +1,8 @@
-<%= form_for(@promoted_item, :url => object_url, :html => { :method => :put, :multipart => true }) do |f| %>
-  <%= render :partial => 'form', :locals => {:f => f} %>
-  <%= render :partial => 'admin/shared/edit_resource_links' %>
+<h1><%=t("editing_promoted_item")%></h1>
+
+<%= render 'shared/error_messages', :target => @promoted_item %>
+
+<%= form_for(:promoted_item, :url => object_url, :html => { :method => :put, :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <%= render :partial => "admin/shared/edit_resource_links" %>
 <% end %>
-
-
