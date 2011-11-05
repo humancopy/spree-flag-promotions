@@ -1,4 +1,4 @@
-module SpreeFlagPromotion
+module SpreeFlagPromotions
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
