@@ -31,7 +31,7 @@ Run:
 
 Copy over migrations via the rake task:
 
-    bundle exec rake railties:install:migrations FROM=spree_flag_promotions
+    rails g spree_flag_promotions:install -f
 
 Run the migrations:
 
