@@ -1,6 +1,6 @@
 # Flag Promotions
 
-Supporting Spree 0.50.x
+Supporting Spree 0.60.x
 
 Inspired by http://spreecommerce.com/documentation/extensions.html#extension-tutorial
 
