@@ -1,6 +1,8 @@
 # Flag Promotions
 
-Supporting Spree >= 0.60.x
+Supporting Spree >= 0.70.x
+
+For Spree 0.60.x see the [0_60_stable branch](branches/0-60-stable)
 
 Inspired by http://spreecommerce.com/documentation/extensions.html#extension-tutorial
 
