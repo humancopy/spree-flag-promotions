@@ -23,6 +23,7 @@ class PromotedItem < ActiveRecord::Base
 
 
   scope :valid, where('start_date <= :start_date AND end_date >= :end_date', {:start_date => Time.now, :end_date => Time.now})
+  scope :sorted, order(:position)
 
   def name
     product.nil? ? 'ERR' : product.name
