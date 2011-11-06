@@ -37,4 +37,14 @@ Run the migrations:
 
     bundle exec rake db:migrate
 
+## Usage
+**Work in progress :)**
+
+Most simple use is to just call all promoted items for display:
+
+```
+# Get valid promoted items, sorted by position 
+promoted_items = PromotedItem.valid.sorted
+```
+
 Copyright (c) 2011 humancopy.net, released under the New BSD License
