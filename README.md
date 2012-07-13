@@ -25,7 +25,7 @@ Following enhancements are provided:
 
 Add the following to your Gemfile
 
-    gem "spree_flag_promotions"
+    gem "spree_flag_promotions", :git => "git@github.com:mez/spree-flag-promotions.git"
 
 Run:
 
