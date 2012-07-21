@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Spree::Core::Engine.routes.prepend do
   # Add your extension routes here
   namespace :admin do
     resources :promoted_items do
