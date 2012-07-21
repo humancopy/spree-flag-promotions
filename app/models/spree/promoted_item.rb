@@ -2,6 +2,8 @@
 class Spree::PromotedItem < ActiveRecord::Base
   belongs_to :product
 
+  attr_accessible :description, :product_id, :start_date, :end_date
+
   validates :product, :presence => true
 
   has_attached_file :background,
