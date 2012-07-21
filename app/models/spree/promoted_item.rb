@@ -1,6 +1,8 @@
 # flag_promotions/app/models/promoted_item.rb
-class PromotedItem < ActiveRecord::Base
+class Spree::PromotedItem < ActiveRecord::Base
   belongs_to :product
+
+  attr_accessible :description, :product_id, :start_date, :end_date
 
   validates :product, :presence => true
 
@@ -26,6 +28,6 @@ class PromotedItem < ActiveRecord::Base
   scope :sorted, order(:position)
 
   def name
-    product.nil? ? 'ERR' : product.name
+    product.name
   end
 end

@@ -1,11 +1,11 @@
 <%= f.field_container :description do %>
   <%= f.label :description, t("description")%><br />
-  <%= f.text_field :description %>
+  <%= f.text_area :description %>
 <% end %>
 
 <%= f.field_container :product_id do %>
   <%= f.label :product_id, t("product")%><br />
-  <%= f.collection_select :product_id, Product.order(:name).all, :id, :name, :include_blank => true %>
+  <%= f.collection_select :product_id, Spree::Product.order(:name).all, :id, :name, :include_blank => true %>
 <% end %>
 
 <p id="start_date_field">
