@@ -1,5 +1,5 @@
 # flag_promotions/app/models/promoted_item.rb
-class PromotedItem < ActiveRecord::Base
+class Spree::PromotedItem < ActiveRecord::Base
   belongs_to :product
 
   validates :product, :presence => true
