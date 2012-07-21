@@ -1,5 +1,5 @@
 # flag_promotions/app/controllers/admin/promoted_items_controller.rb
-class PromotedItemsController < Spree::Admin::ResourceController
+class Admin::PromotedItemsController < Admin::ResourceController
   def update_positions
     params[:positions].each do |id, index|
       PromotedItem.update_all(['position=?', index], ['id=?', id])
