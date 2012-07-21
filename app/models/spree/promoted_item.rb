@@ -26,6 +26,6 @@ class Spree::PromotedItem < ActiveRecord::Base
   scope :sorted, order(:position)
 
   def name
-    product.nil? ? 'ERR' : product.name
+    product.name
   end
 end

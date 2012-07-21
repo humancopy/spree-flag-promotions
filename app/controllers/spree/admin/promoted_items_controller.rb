@@ -4,7 +4,7 @@ class Spree::Admin::PromotedItemsController < Spree::Admin::ResourceController
 
   def update_positions
     params[:positions].each do |id, index|
-      Spree::PromotedItem.update_all(['position=?', index], ['id=?', id])
+      PromotedItem.update_all(['position=?', index], ['id=?', id])
     end
     
     respond_to do |format|
